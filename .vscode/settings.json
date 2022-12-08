@@ -1,0 +1,18 @@
+// 需要 vscode 安装 Prettier - Code formatter 扩展
+{
+  // 控制编辑器是否自动格式化粘贴的内容。格式化程序必须可用，并且能针对文档中的某一范围进行格式化
+  "editor.formatOnPaste": true,
+  // 在保存时格式化文件。格式化程序必须可用，延迟后文件不能保存，并且编辑器不能关闭。
+  "editor.formatOnSave": true,
+  // 控制编辑器在键入一行后是否自动格式化该行。
+  "editor.formatOnType": true,
+  // 当编辑器失去焦点时，将自动保存未保存的编辑器。
+  "files.autoSave": "onFocusChange",
+  // 一个制表符等于的空格数
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules
+.history
+packages/**/node_modules
+lerna-debug.log

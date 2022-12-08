@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:代码格式化 配置文件
  * @Date: 2022-12-07 19:16:52
- * @LastEditTime: 2022-12-08 09:56:57
+ * @LastEditTime: 2022-12-08 20:45:52
  * @FilePath: \warbler-cli\.prettierrc.js
  */
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
   // true: Put > on the last line instead of at a new line
   jsxBracketSameLine: false,
   // 行宽
-  printWidth: 180,
+  printWidth: 80,
   // 换行方式
   proseWrap: 'preserve',
   // 分号

@@ -8,7 +8,7 @@
   "editor.formatOnType": true,
   // 当编辑器失去焦点时，将自动保存未保存的编辑器。
   "files.autoSave": "onFocusChange",
-  // 一个制表符等于的空格数
+  // 使用 prettier 来格式化对应的代码
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

@@ -32,6 +32,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
     "husky": "^8.0.2",
+    "lerna": "^6.1.0",
     "lint-staged": "^13.1.0"
   },
   "lint-staged": {
@@ -43,5 +44,8 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

@@ -2,3 +2,12 @@
 
 package.json
 yarn.lock
+
+.history
+
+node_modules
+packages/**/node_modules
+
+
+lerna.json
+lerna-debug.log

@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description: 脚手架主执行程序
  * @Date: 2022-03-04 11:10:26
- * @LastEditTime: 2022-12-12 20:20:40
+ * @LastEditTime: 2022-12-13 18:59:33
  * @FilePath: \warbler-cli\packages\cli\lib\index.js
  */
 
@@ -10,10 +10,10 @@
 
 const { errorLog } = require('@warbler-fe/cli-utils');
 const { checkNodeVersion, checkRoot, checkUserHome } = require('./check');
-const { checkCacheDir, checkCliVersion } = require('./check');
+const { checkCacheDir, checkCliVersion, checkConfig } = require('./check');
 
 // 脚手架主执行程序
-function main() {
+async function main() {
   try {
     // 检查 node.js 版本
     checkNodeVersion();
@@ -21,10 +21,12 @@ function main() {
     checkRoot();
     // 检查用户主目录
     checkUserHome();
+    // 检查配置文件
+    const config = checkConfig();
     // 检查缓存目录;
-    checkCacheDir();
+    checkCacheDir(config);
     // 检查脚手架是否为最新版本
-    checkCliVersion();
+    await checkCliVersion(config);
   } catch (error) {
     errorLog(error.message);
   }

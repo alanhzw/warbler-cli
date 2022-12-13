@@ -39,7 +39,6 @@
     "url": "https://github.com/alanhzw/warbler-cli/issues"
   },
   "dependencies": {
-    "@warbler-fe/cli-utils": "^0.0.0",
-    "import-local": "^3.1.0"
+    "@warbler-fe/cli-utils": "^0.0.0"
   }
 }

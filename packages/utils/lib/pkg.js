@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:获取项目里的 package.json 文件的内容
  * @Date: 2022-12-12 10:41:18
- * @LastEditTime: 2022-12-12 21:23:36
+ * @LastEditTime: 2022-12-14 16:10:41
  * @FilePath: \warbler-cli\packages\utils\lib\pkg.js
  */
 

@@ -20,7 +20,9 @@ function checkCacheDir(config) {
     // 获取默认的缓存路径
     const globalConfigDirPath = path.join(userHome, DEFAULT_CLI_CACHE_DIR);
     // 向全局的配置文件中写入 cacheDir 属性
-    writeGlobalConfig({ cacheDir: globalConfigDirPath });
+    const writeTargetObj = { cacheDir: globalConfigDirPath };
+    writeGlobalConfig(writeTargetObj);
+    debugLog(`已向全局配置文件中写入: ${JSON.stringify(writeTargetObj)}`);
     process.env.CLI_CACHE_DIR = globalConfigDirPath;
   }
   debugLog(`缓存目录: ${process.env.CLI_CACHE_DIR}`);

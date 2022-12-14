@@ -11,4 +11,5 @@ packages/**/__tests__
 
 
 lerna.json
+warbler.json
 lerna-debug.log

@@ -1,17 +1,17 @@
 {
-  "name": "@warbler-fe/cli-command-init",
+  "name": "@warbler-fe/cli-package",
   "version": "0.0.0",
-  "description": "warblerFe-cli command init",
   "keywords": [
     "cli",
     "warbler",
     "warbler-cli",
     "warbler-fe",
     "warbler-fe-cli",
-    "cli-command-init"
+    "warbler-fe-cli-utils"
   ],
+  "description": "warbler-cli package",
   "author": "warbler <1741847465@qq.com>",
-  "homepage": "https://github.com/alanhzw/warbler-cli/tree/main/packages/commands/init#readme",
+  "homepage": "https://github.com/alanhzw/warbler-cli/tree/main/packages/package#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "directories": {
@@ -22,21 +22,19 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "http://62.234.217.203:52528/repository/sept/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alanhzw/warbler-cli.git",
-    "directory": "packages/utils"
+    "url": "git+https://github.com/alanhzw/warbler-cli.git"
   },
   "scripts": {
-    "test": "node ./__tests__/utils.test.js"
+    "test": "node ./__tests__/package.test.js"
   },
   "bugs": {
     "url": "https://github.com/alanhzw/warbler-cli/issues"
   },
   "dependencies": {
-    "@warbler-fe/cli-package": "^0.0.0",
     "@warbler-fe/cli-utils": "^0.0.0"
   }
 }

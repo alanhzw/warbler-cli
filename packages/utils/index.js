@@ -19,5 +19,6 @@ exports.semver = require('semver');
 exports.rootCheck = require('root-check');
 exports.importLocal = require('import-local');
 exports.minimist = require('minimist');
+exports.npminstall = require('npminstall');
 
 exports.fse = fse;

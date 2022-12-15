@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description: 脚手架主执行程序
  * @Date: 2022-03-04 11:10:26
- * @LastEditTime: 2022-12-14 20:57:46
+ * @LastEditTime: 2022-12-15 15:10:00
  * @FilePath: \warbler-cli\packages\cli\lib\index.js
  */
 
@@ -31,7 +31,7 @@ async function main() {
     // 检查脚手架是否为最新版本
     await checkCliVersion(config);
     // 注册命令
-    registerCommand(config);
+    await registerCommand(config);
   } catch (error) {
     errorLog(error.message);
   }

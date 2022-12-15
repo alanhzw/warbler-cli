@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:与 npm API 相关的操作
  * @Date: 2022-12-12 10:41:18
- * @LastEditTime: 2022-12-13 18:58:01
+ * @LastEditTime: 2022-12-15 14:31:03
  * @FilePath: \warbler-cli\packages\utils\lib\npm.js
  */
 
@@ -102,4 +102,5 @@ module.exports = {
   getNpmVersions,
   getNpmLatestVersion,
   getLatestVersion,
+  DEFAULT_REGISTER,
 };

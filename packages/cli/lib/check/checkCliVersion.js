@@ -1,14 +1,20 @@
 'use strict';
 
 const path = require('path');
-const { debugLog, warnLog } = require('@warbler-fe/cli-utils');
+const { debugLog, warnLog, DEFAULT_REGISTER } = require('@warbler-fe/cli-utils');
 const { resolvePkg, getNpmLatestVersion, semver } = require('@warbler-fe/cli-utils');
 
 // 检查脚手架是否为最新版本
 async function checkCliVersion(config) {
   // 获取配置信息中 npm 源的配置项
   const { register } = config;
-  debugLog(`npm 源: ${register}`);
+  if (register) {
+    process.env.DEFAULT_REGISTER = register;
+    debugLog(`使用用户 npm 源: ${register}`);
+  } else {
+    process.env.DEFAULT_REGISTER = DEFAULT_REGISTER;
+    debugLog(`使用默认 npm 源: ${DEFAULT_REGISTER}`);
+  }
   // 读取 package.json 文件
   const pkg = resolvePkg(path.join(__dirname, '../', '../'));
   // 获取当前版本号和模板名

@@ -41,6 +41,7 @@
     "fs-extra": "^11.1.0",
     "import-local": "^3.1.0",
     "minimist": "^1.2.7",
+    "npminstall": "^6.6.2",
     "npmlog": "^7.0.1",
     "read-pkg": "5.2.0",
     "root-check": "1.0.0",

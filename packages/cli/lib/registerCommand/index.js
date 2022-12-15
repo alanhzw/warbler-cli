@@ -7,7 +7,7 @@ const { warn, error, bold, chalk, success } = require('@warbler-fe/cli-utils');
 const initCommand = require('@warbler-fe/cli-command-init');
 
 // 命令注册
-function registerCommand(config) {
+async function registerCommand(config) {
   // 创建一个 commander 实例
   const program = new commander.Command();
   // 读取 package.json 文件
@@ -39,8 +39,8 @@ function registerCommand(config) {
   program
     .command('init [projectName]')
     .option('-f,--force', '是否强制初始化项目(会清空所有文件)')
-    .action((...argv) => {
-      initCommand(...argv, config);
+    .action(async (...argv) => {
+      await initCommand(...argv, config);
     });
 
   // 监听未注册的所有命令
@@ -66,7 +66,7 @@ function registerCommand(config) {
   program.showHelpAfterError(warn('通过添加 --help 来查看帮助文档, 以帮助您避免错误 \n'));
 
   // 解析参数
-  program.parse(process.argv);
+  program.parseAsync(process.argv);
 
   // 判断是否输入命令 显示帮助文档
   if (program.args && program.args.length < 1) {

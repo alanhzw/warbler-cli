@@ -3,5 +3,11 @@
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useWorkspaces": false,
   "version": "0.0.0",
-  "packages": ["packages/cli", "packages/utils", "packages/package", "packages/commands/*"]
+  "packages": [
+    "packages/cli",
+    "packages/utils",
+    "packages/package",
+    "packages/command",
+    "packages/commands/*"
+  ]
 }

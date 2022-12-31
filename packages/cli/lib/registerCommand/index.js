@@ -2,7 +2,7 @@
 
 const path = require('path');
 const commander = require('commander');
-const { resolvePkg } = require('@warbler-fe/cli-utils');
+const { resolvePkg, errorLog } = require('@warbler-fe/cli-utils');
 const { warn, error, bold, chalk, success } = require('@warbler-fe/cli-utils');
 const initCommand = require('@warbler-fe/cli-command-init');
 
@@ -13,7 +13,7 @@ async function registerCommand(config) {
   // 读取 package.json 文件
   const pkg = resolvePkg(path.join(__dirname, '../', '../'));
   // 获取脚手架执行命令 name
-  const name = (pkg.bin && Object.keys(pkg.bin)[0]) || '';
+  const name = (pkg.bin && Object.keys(pkg.bin).at(0)) || '';
 
   // 配置基本信息
   program
@@ -29,7 +29,7 @@ async function registerCommand(config) {
     .helpOption('-h, --help', '查看帮助文档')
     .version(pkg.version, '-V, --version', '查看脚手架版本')
     .option('-D, --debug', '是否开启调试模式, 可查看调试信息', false)
-    .option('--ignore-warn', '是否忽略提示信息, 开启后会忽略调试信息', false)
+    .option('--ignore-warning', '是否忽略提示信息, 开启后会忽略调试信息', false)
     .configureOutput({
       // 将错误高亮显示
       outputError: (str, write) => write(error(str)),
@@ -37,10 +37,14 @@ async function registerCommand(config) {
 
   // 注册 init 命令
   program
-    .command('init [projectName]')
+    .command('init')
+    .summary('初始化项目')
+    .description(bold(`${success('通过选择模板, 您可以快速的初始化一个项目')}`))
+    .argument('[projectName]', '项目名称')
     .option('-f, --force', '是否强制初始化项目(会清空所有文件)')
+    .option('-i, --install', '是否在创建完成后自动安装依赖')
     .action(async (...argv) => {
-      await initCommand(...argv, config);
+      await catchHandler(initCommand.bind(null, [...argv, config]));
     });
 
   // 监听未注册的所有命令
@@ -71,6 +75,15 @@ async function registerCommand(config) {
   // 判断是否输入命令 显示帮助文档
   if (program.args && program.args.length < 1) {
     program.outputHelp();
+  }
+}
+
+// 捕获异步方法中的错误
+async function catchHandler(fn) {
+  try {
+    await fn();
+  } catch (e) {
+    errorLog(e.message);
   }
 }
 

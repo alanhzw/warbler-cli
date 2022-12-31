@@ -36,6 +36,7 @@
     "url": "https://github.com/alanhzw/warbler-cli/issues"
   },
   "dependencies": {
-    "@warbler-fe/cli-utils": "^0.0.0"
+    "@warbler-fe/cli-utils": "^0.0.0",
+    "@warbler-fe/cli-command": "^0.0.0"
   }
 }

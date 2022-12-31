@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:与 npm API 相关的操作
  * @Date: 2022-12-12 10:41:18
- * @LastEditTime: 2022-12-15 14:31:03
+ * @LastEditTime: 2022-12-31 16:52:29
  * @FilePath: \warbler-cli\packages\utils\lib\npm.js
  */
 
@@ -92,7 +92,7 @@ async function getLatestVersion(npmName, register = DEFAULT_REGISTER) {
   const versions = await getNpmVersions(npmName, register);
   if (versions) {
     const sortVersions = versions.sort((a, b) => semver.gt(b, a));
-    return sortVersions[sortVersions.length - 1];
+    return sortVersions.at(-1);
   }
   return null;
 }

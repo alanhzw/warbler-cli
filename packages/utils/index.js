@@ -20,5 +20,7 @@ exports.rootCheck = require('root-check');
 exports.importLocal = require('import-local');
 exports.minimist = require('minimist');
 exports.npminstall = require('npminstall');
+exports.emptyDir = require('empty-dir');
+exports.inquirer = require('inquirer');
 
 exports.fse = fse;

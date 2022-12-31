@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description: 一些常量
  * @Date: 2022-03-04 11:10:26
- * @LastEditTime: 2022-12-13 18:17:22
+ * @LastEditTime: 2022-12-31 15:40:47
  * @FilePath: \warbler-cli\packages\cli\lib\const\index.js
  */
 
@@ -10,7 +10,7 @@
 
 // 脚手架最低 node 版本
 const LOWEST_NODE_VERSION = '14.18.0';
-// 缓存目录
+// 默认缓存目录
 const DEFAULT_CLI_CACHE_DIR = '.warbler-cli';
 
 // npm 镜像列表

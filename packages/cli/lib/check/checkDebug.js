@@ -6,8 +6,8 @@ const { debugLog, minimist, getUserArgv, changeLogLevel } = require('@warbler-fe
 function checkDebug() {
   // 获取用户参数
   const args = minimist(getUserArgv());
-  // 判断是否传入了 --ignore-warn, 忽略提示信息以及调试信息
-  if (args['ignore-warn']) {
+  // 判断是否传入了 --ignore-warning, 忽略提示信息以及调试信息
+  if (args['ignore-warning']) {
     changeLogLevel('success');
     return;
   }

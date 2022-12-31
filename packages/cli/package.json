@@ -1,14 +1,13 @@
 {
   "name": "@warbler-fe/cli",
   "version": "0.0.0",
-  "description": "warblerFe-cli core",
+  "description": "流莺前端 -> 脚手架 -> 核心",
   "keywords": [
     "cli",
     "warbler",
     "warbler-cli",
     "warbler-fe",
-    "warbler-fe-cli",
-    "warbler-fe-cli-utils"
+    "warbler-fe-cli"
   ],
   "author": "warbler <1741847465@qq.com>",
   "homepage": "https://github.com/alanhzw/warbler-cli/tree/main/packages/cli#readme",

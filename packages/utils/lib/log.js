@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:对控制台打印日志进行封装
  * @Date: 2022-12-08 21:32:53
- * @LastEditTime: 2022-12-14 20:53:29
+ * @LastEditTime: 2022-12-30 15:01:36
  * @FilePath: \warbler-cli\packages\utils\lib\log.js
  */
 
@@ -16,7 +16,7 @@ const { debug, warn, success, error, bold } = require('./chalk');
 log.level = 'warn';
 
 // 定制 log 的 level    参数: (名称,权重,配置,命令行显示文本)
-log.addLevel('debug', 1000, {}, debug('♋调试模式'));
+log.addLevel('debug', 1000, {}, debug('🔨调试模式'));
 log.addLevel('warn', 2000, {}, warn('💛友情提示'));
 log.addLevel('success', 5000, {}, success('✅运行成功'));
 log.addLevel('error', 5000, {}, error('❌发生错误'));

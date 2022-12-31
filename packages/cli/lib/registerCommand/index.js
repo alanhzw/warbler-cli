@@ -38,7 +38,7 @@ async function registerCommand(config) {
   // 注册 init 命令
   program
     .command('init [projectName]')
-    .option('-f,--force', '是否强制初始化项目(会清空所有文件)')
+    .option('-f, --force', '是否强制初始化项目(会清空所有文件)')
     .action(async (...argv) => {
       await initCommand(...argv, config);
     });

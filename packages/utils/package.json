@@ -1,7 +1,7 @@
 {
   "name": "@warbler-fe/cli-utils",
   "version": "0.0.0",
-  "description": "warblerFe-cli utils",
+  "description": "流莺前端 -> 脚手架 -> 工具包",
   "keywords": [
     "cli",
     "warbler",

@@ -1,7 +1,7 @@
 {
   "name": "@warbler-fe/cli-command-init",
   "version": "0.0.0",
-  "description": "warblerFe-cli command init",
+  "description": "流莺前端 -> 脚手架 -> init 命令",
   "keywords": [
     "cli",
     "warbler",
@@ -36,7 +36,6 @@
     "url": "https://github.com/alanhzw/warbler-cli/issues"
   },
   "dependencies": {
-    "@warbler-fe/cli-package": "^0.0.0",
     "@warbler-fe/cli-utils": "^0.0.0"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "warbler-fe-cli",
+  "name": "warbler-cli",
   "version": "0.0.0",
   "description": "流莺前端 -> 脚手架工具",
   "main": "index.js",
@@ -18,7 +18,8 @@
   },
   "keywords": [
     "warbler",
-    "cli"
+    "cli",
+    "warbler-cli"
   ],
   "author": "warbler",
   "license": "MIT",

@@ -13,9 +13,8 @@ class Package {
     if (!isObject(options)) {
       throw new Error('Package 类的参数必须是对象类型!');
     }
-    const { config, packageName, packageVersion } = options;
-    // 用户配置文件
-    this.config = config;
+    const { packageName, packageVersion } = options;
+
     // package name
     this.packageName = packageName;
     // package version
@@ -82,7 +81,7 @@ class Package {
       await npminstall({
         root: this.cacheDir, // 模块路径
         storeDir: this.cachePackageDir, // 模块安装位置
-        register: process.env.DEFAULT_REGISTER, // 设置 npm 源
+        register: process.env.NPM_REGISTER, // 设置 npm 源
         pkgs: [
           // 要安装的包信息
           {
@@ -112,7 +111,7 @@ class Package {
         await npminstall({
           root: this.cacheDir, // 模块路径
           storeDir: this.cachePackageDir, // 模块安装位置
-          register: process.env.DEFAULT_REGISTER, // 设置 npm 源
+          register: process.env.NPM_REGISTER, // 设置 npm 源
           pkgs: [
             // 要安装的包信息
             {

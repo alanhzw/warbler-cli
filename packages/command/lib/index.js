@@ -14,12 +14,12 @@ class Command {
       throw new Error('参数列表不可以为空!');
     }
     this.argv = argv;
-    // 获取配置
-    this.config = argv.at(-1);
+    // 获取全局配置
+    this.config = argv.at(-1) || {};
     // 获取命令对象
-    this.command = argv.at(-2);
+    this.command = argv.at(-2) || {};
     // 获取选项参数
-    this.options = argv.at(-3);
+    this.options = argv.at(-3) || {};
     new Promise(() => {
       let chain = Promise.resolve();
       chain = chain.then(() => this.init());
@@ -28,10 +28,12 @@ class Command {
     });
   }
 
+  // 命令初始化阶段
   init() {
     throw new Error('command 必须拥有一个 init 方法');
   }
 
+  // 命令执行阶段
   exec() {
     throw new Error('command 必须拥有一个 exec 方法');
   }

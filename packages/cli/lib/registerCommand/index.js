@@ -40,9 +40,8 @@ async function registerCommand(config) {
     .command('init')
     .summary('初始化项目')
     .description(bold(`${success('通过选择模板, 您可以快速的初始化一个项目')}`))
-    .argument('[projectName]', '项目名称')
-    .option('-f, --force', '是否强制初始化项目(会清空所有文件)')
-    .option('-i, --install', '是否在创建完成后自动安装依赖')
+    .option('-f, --force', '是否强制初始化项目(会清空所有文件)', false)
+    .option('-i, --install', '是否在创建完成后自动安装依赖', false)
     .action(async (...argv) => {
       await catchHandler(initCommand.bind(null, [...argv, config]));
     });
@@ -62,7 +61,9 @@ async function registerCommand(config) {
   // 添加额外的帮助信息
   program.on('--help', () => {
     console.log();
-    console.log(bold(`  运行 ${chalk.blue('warbler <command> --help')} 来查看具体命令的帮助文档`));
+    console.log(
+      bold(`  运行 ${chalk.blue('warbler <command> --help')} 来查看某个具体命令的帮助文档`),
+    );
     console.log();
   });
 

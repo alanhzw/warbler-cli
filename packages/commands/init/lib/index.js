@@ -1,7 +1,9 @@
 'use strict';
 
 const Command = require('@warbler-fe/cli-command');
-const { fse, emptyDir, debugLog, warnLog, writeGlobalConfig } = require('@warbler-fe/cli-utils');
+const { debugLog, warnLog, writeGlobalConfig } = require('@warbler-fe/cli-utils');
+const { fse, emptyDir, spinnerStart, sleep } = require('@warbler-fe/cli-utils');
+
 const Package = require('@warbler-fe/cli-package');
 const { isForceInit, getProjectInfo } = require('./methods/inquirer');
 const { DEFAULT_TEMPLATE_LIST } = require('./template/template');
@@ -69,15 +71,26 @@ class InitCommand extends Command {
       packageVersion: 'latest',
     });
     // 查看本地是否已经存在 Package
-    const isExists = await templateNpm.exists();
-    if (isExists) {
-      //
+    let isExists = await templateNpm.exists();
+    // 如果不存在就进行下载
+    if (!isExists) {
+      warnLog('即将为您下载模板');
+      await templateNpm.download();
+      // 再次查看本地是否已经存在 Package
+      isExists = await templateNpm.exists();
+      if (isExists) {
+        warnLog('模板下载成功');
+      }
     }
   }
 
   // 模板安装
   async installTemplate() {
     //
+    const spinner = spinnerStart('模板安装中，请稍候...');
+    await sleep();
+    spinner.stop(true);
+    warnLog('模板安装成功');
   }
 
   // 初始化模板列表

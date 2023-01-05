@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:一些通用方法
  * @Date: 2022-12-12 10:41:18
- * @LastEditTime: 2023-01-05 17:12:25
+ * @LastEditTime: 2023-01-05 18:54:14
  * @FilePath: \warbler-cli\packages\utils\lib\common.js
  */
 
@@ -22,7 +22,7 @@ const isArray = (item) => getPrototype(item) === 'Array';
 
 // 终止程序执行1s, 默认让程序睡一秒
 function sleep(timeout = 1000) {
-  new Promise((resolve) => {
+  return new Promise((resolve) => {
     const timeoutHandle = setTimeout(() => {
       clearTimeout(timeoutHandle);
       resolve();

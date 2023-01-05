@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const { debugLog, errorLog } = require('@warbler-fe/cli-utils');
+const { debugLog, errorLog, spinnerStart, sleep } = require('@warbler-fe/cli-utils');
 const { isObject, npminstall, getLatestVersion, fse } = require('@warbler-fe/cli-utils');
 
 // Package 类 管理模块
@@ -74,9 +74,11 @@ class Package {
   }
 
   // 安装 package
-  async install() {
+  async download() {
     await this.getNpmVersion();
     debugLog(`即将安装 ${this.packageName} , 版本为: ${this.packageVersion}`);
+    const spinner = spinnerStart('模板下载中，请稍候...');
+    await sleep();
     try {
       await npminstall({
         root: this.cacheDir, // 模块路径
@@ -93,6 +95,8 @@ class Package {
       debugLog(` ${this.packageName} 安装完毕 , 版本为: ${this.packageVersion}`);
     } catch (error) {
       errorLog(error.message);
+    } finally {
+      spinner.stop(true);
     }
   }
 
@@ -107,6 +111,8 @@ class Package {
       debugLog(`${this.packageName} 已是最新版本: ${this.packageVersion}`);
     } else {
       debugLog(`即将更新 ${this.packageName} , 更新版本为: ${latestVersion}`);
+      const spinner = spinnerStart('模板下载中，请稍候...');
+      await sleep();
       try {
         await npminstall({
           root: this.cacheDir, // 模块路径
@@ -125,6 +131,8 @@ class Package {
         this.packageVersion = latestVersion;
       } catch (error) {
         errorLog(error.message);
+      } finally {
+        spinner.stop(true);
       }
     }
   }

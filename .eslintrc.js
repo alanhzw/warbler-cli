@@ -21,5 +21,7 @@ module.exports = {
     'class-methods-use-this': 0,
     // 允许直接使用 new 构造函数
     'no-new': 0,
+    // 关闭 LF 导致的错误
+    'linebreak-style': 0,
   },
 };

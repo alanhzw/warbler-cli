@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -38,7 +41,8 @@
     "eslint-plugin-import": "^2.25.2",
     "husky": "^8.0.2",
     "lerna": "^6.1.0",
-    "lint-staged": "^13.1.0"
+    "lint-staged": "^13.1.0",
+    "vitepress": "^1.0.0-alpha.45"
   },
   "lint-staged": {
     "*.{js,json}": [

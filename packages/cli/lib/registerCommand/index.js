@@ -29,7 +29,7 @@ async function registerCommand(config) {
     .helpOption('-h, --help', '查看帮助文档')
     .version(pkg.version, '-V, --version', '查看脚手架版本')
     .option('-D, --debug', '是否开启调试模式, 可查看调试信息', false)
-    .option('--ignore-warning', '是否忽略提示信息, 开启后会忽略调试信息', false)
+    .option('--ignore-warning', '是否忽略提示信息, 开启后同样会忽略调试信息', false)
     .configureOutput({
       // 将错误高亮显示
       outputError: (str, write) => write(error(str)),
@@ -42,6 +42,7 @@ async function registerCommand(config) {
     .description(bold(`${success('通过选择模板, 您可以快速的初始化一个项目')}`))
     .option('-f, --force', '是否强制初始化项目(会清空所有文件)', false)
     .option('-i, --install', '是否在创建完成后自动安装依赖', false)
+    .option('-s, --serve', '是否在安装依赖后自动启动服务', false)
     .action(async (...argv) => {
       await catchHandler(initCommand.bind(null, [...argv, config]));
     });

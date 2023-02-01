@@ -27,7 +27,7 @@ class Package {
 
   // 获取对应版本在本地缓存文件中的路径
   // package 在本地的缓存形式: _@warbler-fe_cli@1.0.0@@warbler-fe
-  getSpecificFilePath(packageVersion) {
+  getSpecificFilePath(packageVersion = this.packageVersion) {
     return path.resolve(
       this.cachePackageDir,
       `_${this.packageName.replace('/', '_')}@${packageVersion}@${this.packageName}`,
@@ -73,10 +73,10 @@ class Package {
     return result;
   }
 
-  // 安装 package
+  // 下载 package
   async download() {
     await this.getNpmVersion();
-    debugLog(`即将安装 ${this.packageName} , 版本为: ${this.packageVersion}`);
+    debugLog(`即将下载 ${this.packageName} , 版本为: ${this.packageVersion}`);
     const spinner = spinnerStart('模板下载中，请稍候...');
     await sleep();
     try {
@@ -92,11 +92,11 @@ class Package {
           },
         ],
       });
-      debugLog(` ${this.packageName} 安装完毕 , 版本为: ${this.packageVersion}`);
-    } catch (error) {
-      errorLog(error.message);
-    } finally {
       spinner.stop(true);
+      debugLog(` ${this.packageName} 下载完毕 , 版本为: ${this.packageVersion}`);
+    } catch (error) {
+      spinner.stop(true);
+      errorLog(error.message);
     }
   }
 
@@ -126,13 +126,13 @@ class Package {
             },
           ],
         });
-        debugLog(`${this.packageName} 更新完毕 , 最新版本为: ${latestVersion}`);
         // 更新当前版本
         this.packageVersion = latestVersion;
-      } catch (error) {
-        errorLog(error.message);
-      } finally {
         spinner.stop(true);
+        debugLog(`${this.packageName} 更新完毕 , 最新版本为: ${latestVersion}`);
+      } catch (error) {
+        spinner.stop(true);
+        errorLog(error.message);
       }
     }
   }

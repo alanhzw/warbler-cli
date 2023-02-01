@@ -1,7 +1,7 @@
 'use strict';
 
 const Command = require('@warbler-fe/cli-command');
-const { debugLog, warnLog, writeGlobalConfig } = require('@warbler-fe/cli-utils');
+const { debugLog, warnLog, writeGlobalConfig, errorLog } = require('@warbler-fe/cli-utils');
 const { fse, emptyDir, spinnerStart, sleep } = require('@warbler-fe/cli-utils');
 
 const Package = require('@warbler-fe/cli-package');
@@ -28,6 +28,11 @@ class InitCommand extends Command {
       // 把项目名称和模板名称存起来
       this.projectName = projectName;
       this.templateName = templateName;
+      // 创建一个 Package
+      this.templateNpm = new Package({
+        packageName: this.templateName,
+        packageVersion: 'latest',
+      });
       // 下载模板
       await this.downloadTemplate();
       // 安装模板
@@ -65,19 +70,14 @@ class InitCommand extends Command {
 
   // 模板下载
   async downloadTemplate() {
-    // 创建一个 Package
-    const templateNpm = new Package({
-      packageName: this.templateName,
-      packageVersion: 'latest',
-    });
     // 查看本地是否已经存在 Package
-    let isExists = await templateNpm.exists();
+    let isExists = await this.templateNpm.exists();
     // 如果不存在就进行下载
     if (!isExists) {
       warnLog('即将为您下载模板');
-      await templateNpm.download();
+      await this.templateNpm.download();
       // 再次查看本地是否已经存在 Package
-      isExists = await templateNpm.exists();
+      isExists = await this.templateNpm.exists();
       if (isExists) {
         warnLog('模板下载成功');
       }
@@ -86,11 +86,27 @@ class InitCommand extends Command {
 
   // 模板安装
   async installTemplate() {
-    //
+    // 获取当前目录
+    const targetPath = process.cwd();
+    debugLog(`当前目录 ${targetPath}`);
+    // 获取模板所在目录
+    const templateDir = this.templateNpm.getSpecificFilePath();
+    debugLog(`模板所在目录 ${templateDir}`);
     const spinner = spinnerStart('模板安装中，请稍候...');
     await sleep();
-    spinner.stop(true);
-    warnLog('模板安装成功');
+    // 确保目录存在 不存在会创建
+    try {
+      fse.ensureDirSync(templateDir);
+      fse.ensureDirSync(targetPath);
+      // 拷贝模板到当前目录
+      fse.copySync(templateDir, targetPath);
+      spinner.stop(true);
+      warnLog('模板安装成功');
+    } catch (error) {
+      spinner.stop(true);
+      warnLog('模板安装失败');
+      errorLog(error.message);
+    }
   }
 
   // 初始化模板列表

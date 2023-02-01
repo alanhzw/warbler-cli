@@ -38,8 +38,8 @@
     "url": "https://github.com/alanhzw/warbler-cli/issues"
   },
   "dependencies": {
-    "@warbler-fe/cli-utils": "^0.0.0",
     "@warbler-fe/cli-command-init": "^0.0.0",
-    "commander": "^9.4.1"
+    "@warbler-fe/cli-utils": "^0.0.0",
+    "commander": "^10.0.0"
   }
 }

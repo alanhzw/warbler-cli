@@ -24,19 +24,19 @@ class Command {
       let chain = Promise.resolve();
       chain = chain.then(() => this.init());
       chain = chain.then(() => this.exec());
+      chain = chain.then(() => this.final());
       chain.catch((error) => errorLog(error.message));
     });
   }
 
   // 命令初始化阶段
-  init() {
-    throw new Error('command 必须拥有一个 init 方法');
-  }
+  init() {}
 
   // 命令执行阶段
-  exec() {
-    throw new Error('command 必须拥有一个 exec 方法');
-  }
+  exec() {}
+
+  // 命令执行结束
+  final() {}
 }
 
 module.exports = Command;

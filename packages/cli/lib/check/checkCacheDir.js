@@ -3,7 +3,7 @@
 const { homedir } = require('os');
 const path = require('path');
 const { debugLog, writeGlobalConfig } = require('@warbler-fe/cli-utils');
-const { DEFAULT_CLI_CACHE_DIR } = require('../const');
+const { DEFAULT_CLI_CACHE_DIR } = require('@warbler-fe/cli-utils');
 
 // 检查用户是否设定了文件的缓存目录
 function checkCacheDir(config) {

@@ -1,5 +1,4 @@
 #! /usr/bin/env node
-/* eslint-disable global-require */
 
 'use strict';
 
@@ -14,22 +13,3 @@ if (importLocal(__filename)) {
 else {
   require('../lib')();
 }
-
-// 脚手架名称
-// npm 模块名称
-// 操作系统
-// 脚手架所在目录
-// 用户主目录
-// 缓存目录
-// 本地 node.js 版本
-// 最低 node.js 版本
-// 本地脚手架版本
-// 最新脚手架版本
-// 脚手架下载量
-
-// 需要一个指定缓存目录的功能
-// 需要一个指定 npm 源的功能
-// 需要一个指定 脚手架工具 的功能 yarn npm pnpm
-// 是否忽略所有提示信息
-// 是否忽略版本更新提示
-// 模板安装完成后是否自动安装依赖 是否自动启动

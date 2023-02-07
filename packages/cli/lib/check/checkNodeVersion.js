@@ -1,7 +1,7 @@
 'use strict';
 
 const { semver, getNodeVersion, chalk, debugLog } = require('@warbler-fe/cli-utils');
-const { LOWEST_NODE_VERSION } = require('../const');
+const { LOWEST_NODE_VERSION } = require('@warbler-fe/cli-utils');
 
 // 检查 node.js 版本
 function checkNodeVersion() {

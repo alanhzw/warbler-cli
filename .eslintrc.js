@@ -23,5 +23,7 @@ module.exports = {
     'no-new': 0,
     // 关闭 LF 导致的错误
     'linebreak-style': 0,
+    // 允许直接使用 require
+    'global-require': 0,
   },
 };

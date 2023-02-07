@@ -5,6 +5,7 @@ const commander = require('commander');
 const { resolvePkg, errorLog } = require('@warbler-fe/cli-utils');
 const { warn, error, bold, chalk, success } = require('@warbler-fe/cli-utils');
 const initCommand = require('@warbler-fe/cli-command-init');
+const configCommand = require('@warbler-fe/cli-command-config');
 
 // 命令注册
 async function registerCommand(config) {
@@ -32,7 +33,7 @@ async function registerCommand(config) {
     .option('--ignore-warning', '是否忽略提示信息, 开启后同样会忽略调试信息', false)
     .configureOutput({
       // 将错误高亮显示
-      outputError: (str, write) => write(error(str)),
+      outputError: (str, write) => write(error(`错误信息: ${str}`)),
     });
 
   // 注册 init 命令
@@ -45,6 +46,21 @@ async function registerCommand(config) {
     .option('-s, --serve', '是否在安装依赖后自动启动服务', false)
     .action(async (...argv) => {
       await catchHandler(initCommand.bind(null, [...argv, config]));
+    });
+
+  // 注册 config 命令
+  program
+    .command('config')
+    .summary('脚手架配置')
+    .description(bold(`${success('对脚手架进行配置, 也可以查看您的配置文件')}`))
+    .option('-s, --show', '查看脚手架的配置')
+    .option('-i, --info', '查看脚手架的信息')
+    .option('-sr, --set-registry <registry>', '指定 npm 源地址')
+    .option('-scd, --set-cache-dir <cacheDir>', '指定缓存目录地址')
+    .option('-spm, --set-package-manager <packageManager>', '指定包管理工具')
+    .option('-ssu, --set-show-update <isShowUpdate>', '是否提示版本更新')
+    .action(async (...argv) => {
+      await catchHandler(configCommand.bind(null, [...argv, config]));
     });
 
   // 监听未注册的所有命令

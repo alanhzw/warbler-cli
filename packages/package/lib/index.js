@@ -83,7 +83,7 @@ class Package {
       await npminstall({
         root: this.cacheDir, // 模块路径
         storeDir: this.cachePackageDir, // 模块安装位置
-        register: process.env.NPM_REGISTER, // 设置 npm 源
+        register: process.env.NPM_REGISTRY, // 设置 npm 源
         pkgs: [
           // 要安装的包信息
           {
@@ -117,7 +117,7 @@ class Package {
         await npminstall({
           root: this.cacheDir, // 模块路径
           storeDir: this.cachePackageDir, // 模块安装位置
-          register: process.env.NPM_REGISTER, // 设置 npm 源
+          register: process.env.NPM_REGISTRY, // 设置 npm 源
           pkgs: [
             // 要安装的包信息
             {

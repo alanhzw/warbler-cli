@@ -88,7 +88,7 @@ async function registerCommand(config) {
   program.showHelpAfterError(warn('通过添加 --help 来查看帮助文档, 以帮助您避免错误 \n'));
 
   // 解析参数
-  program.parseAsync(process.argv);
+  await program.parseAsync(process.argv);
 
   // 判断是否输入命令 显示帮助文档
   if (program.args && program.args.length < 1) {

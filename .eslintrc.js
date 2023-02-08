@@ -25,5 +25,7 @@ module.exports = {
     'linebreak-style': 0,
     // 允许直接使用 require
     'global-require': 0,
+    // 每行的最大字符数
+    'max-len': ['error', 120],
   },
 };

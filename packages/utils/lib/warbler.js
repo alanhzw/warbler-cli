@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:操作全局配置文件的方法
  * @Date: 2022-12-09 15:32:59
- * @LastEditTime: 2023-02-07 10:55:06
+ * @LastEditTime: 2023-02-08 15:53:20
  * @FilePath: \warbler-cli\packages\utils\lib\warbler.js
  */
 
@@ -11,9 +11,10 @@
 const { homedir } = require('os');
 const path = require('path');
 const fse = require('fs-extra');
+const { DEFAULT_CLI_CACHE_DIR, DEFAULT_CONFIG_NAME } = require('./const');
 
 // 获取全局配置文件 warbler.json 所在的路径
-const globalConfigPath = path.join(homedir(), '.warbler-cli', 'warbler.json');
+const globalConfigPath = path.join(homedir(), DEFAULT_CLI_CACHE_DIR, DEFAULT_CONFIG_NAME);
 
 // 获取全局 warbler.json
 function readGlobalConfig() {

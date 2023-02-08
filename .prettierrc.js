@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:代码格式化 配置文件
  * @Date: 2022-12-07 19:16:52
- * @LastEditTime: 2022-12-12 16:52:51
+ * @LastEditTime: 2023-02-08 15:57:40
  * @FilePath: \warbler-cli\.prettierrc.js
  */
 module.exports = {

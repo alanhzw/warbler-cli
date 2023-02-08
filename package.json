@@ -7,9 +7,7 @@
     "prepare": "husky install",
     "commit": "git-cz",
     "commit:all": "git add . && git-cz",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "build": "vitepress build docs"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:与 npm API 相关的操作
  * @Date: 2022-12-12 10:41:18
- * @LastEditTime: 2023-02-07 16:04:41
+ * @LastEditTime: 2023-02-07 16:35:51
  * @FilePath: \warbler-cli\packages\utils\lib\npm.js
  */
 
@@ -11,9 +11,7 @@
 const axios = require('axios');
 const urlJoin = require('url-join');
 const semver = require('semver');
-
-// 默认的 npm 源
-const DEFAULT_REGISTRY = 'https://registry.npmjs.org/';
+const { DEFAULT_REGISTRY } = require('./const');
 
 /**
  * @description: 获取 npm 模块的信息

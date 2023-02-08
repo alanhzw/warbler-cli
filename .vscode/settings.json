@@ -17,7 +17,7 @@
   },
   //在一定数量的字符后显示标尺
   "editor.rulers": [
-    100
+    120
   ],
   "cSpell.words": [
     "cnpm",

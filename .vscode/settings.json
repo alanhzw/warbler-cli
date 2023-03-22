@@ -1,11 +1,11 @@
 // 需要 vscode 安装 Prettier - Code formatter 扩展
 {
   // 控制编辑器是否自动格式化粘贴的内容。格式化程序必须可用，并且能针对文档中的某一范围进行格式化
-  "editor.formatOnPaste": true,
+  "editor.formatOnPaste": false,
   // 在保存时格式化文件。格式化程序必须可用，延迟后文件不能保存，并且编辑器不能关闭。
   "editor.formatOnSave": true,
   // 控制编辑器在键入一行后是否自动格式化该行。
-  "editor.formatOnType": true,
+  "editor.formatOnType": false,
   // 当编辑器失去焦点时，将自动保存未保存的编辑器。
   "files.autoSave": "onFocusChange",
   // 使用 prettier 来格式化对应的代码
@@ -16,15 +16,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   //在一定数量的字符后显示标尺
-  "editor.rulers": [
-    120
-  ],
-  "cSpell.words": [
-    "cnpm",
-    "linebreak",
-    "taobao",
-    "tencent",
-    "vitepress",
-    "ysgroup"
-  ],
+  "editor.rulers": [120],
+  "cSpell.words": ["cnpm", "linebreak", "taobao", "tencent", "vitepress", "ysgroup"]
 }

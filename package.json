@@ -7,7 +7,9 @@
     "prepare": "husky install",
     "commit": "git-cz",
     "commit:all": "git add . && git-cz",
-    "build": "vitepress build docs"
+    "docs:dev": "vitepress dev docs --port 5373",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -40,7 +42,7 @@
     "husky": "^8.0.2",
     "lerna": "^6.1.0",
     "lint-staged": "^13.1.0",
-    "vitepress": "^1.0.0-alpha.45"
+    "vitepress": "^1.0.0-alpha.63"
   },
   "lint-staged": {
     "*.{js,json}": [

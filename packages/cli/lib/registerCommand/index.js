@@ -58,7 +58,7 @@ async function registerCommand(config) {
     .option('-sr, --set-registry <registry>', '指定 npm 源地址')
     .option('-scd, --set-cache-dir <cacheDir>', '指定缓存目录地址')
     .option('-spm, --set-package-manager <packageManager>', '指定包管理工具')
-    .option('-ssu, --set-show-update <isShowUpdate>', '是否提示版本更新')
+    .option('-ssu, --set-show-update <isShowUpdate>', '是否提示版本更新（boolean，默认true）')
     .action(async (...argv) => {
       await catchHandler(configCommand.bind(null, [...argv, config]));
     });

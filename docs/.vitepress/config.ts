@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress';
-import sidebar from './sidebar/index';
+// import sidebar from './sidebar/index';
 
 export default defineConfig({
   lang: 'en-US',
@@ -16,10 +16,31 @@ export default defineConfig({
     },
     lastUpdatedText: '最近更新',
     socialLinks: [],
-    sidebar: sidebar.getSidebar(),
+    sidebar: getSideBar(),
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2023-present warbler',
     },
   },
 });
+
+function getSideBar() {
+  return [
+    {
+      text: '快速开始',
+      link: '/',
+    },
+    {
+      text: '命令指南',
+      items: [
+        { text: 'warbler', link: '/guide/command/warbler' },
+        { text: 'init', link: '/guide/command/init' },
+        { text: 'config', link: '/guide/command/config' },
+      ],
+    },
+    {
+      text: '配置参考',
+      link: '/guide/settings',
+    },
+  ];
+}

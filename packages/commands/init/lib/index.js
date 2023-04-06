@@ -61,7 +61,7 @@ class InitCommand extends Command {
       }
       // 用户选择了不清空, 退出程序, 给出提示
       else {
-        warnLog('由于您选择了否, 程序已结束');
+        warnLog('由于你选择了否, 程序已结束');
         prepareFlag = false;
       }
     }
@@ -74,7 +74,7 @@ class InitCommand extends Command {
     let isExists = await this.templateNpm.exists();
     // 如果不存在就进行下载
     if (!isExists) {
-      warnLog('即将为您下载模板');
+      warnLog('即将为你下载模板');
       await this.templateNpm.download();
       // 再次查看本地是否已经存在 Package
       isExists = await this.templateNpm.exists();

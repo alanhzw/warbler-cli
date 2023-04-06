@@ -40,6 +40,7 @@
   "dependencies": {
     "@warbler-fe/cli-command-init": "^0.0.0",
     "@warbler-fe/cli-command-config": "^0.0.0",
+    "@warbler-fe/cli-command-deploy": "^0.0.0",
     "@warbler-fe/cli-utils": "^0.0.0",
     "commander": "^10.0.0"
   }

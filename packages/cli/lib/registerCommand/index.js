@@ -6,6 +6,7 @@ const { resolvePkg, errorLog } = require('@warbler-fe/cli-utils');
 const { warn, error, bold, chalk, success } = require('@warbler-fe/cli-utils');
 const initCommand = require('@warbler-fe/cli-command-init');
 const configCommand = require('@warbler-fe/cli-command-config');
+const deployCommand = require('@warbler-fe/cli-command-deploy');
 
 // 命令注册
 async function registerCommand(config) {
@@ -40,7 +41,7 @@ async function registerCommand(config) {
   program
     .command('init')
     .summary('初始化项目')
-    .description(bold(`${success('通过选择模板, 您可以快速的初始化一个项目')}`))
+    .description(bold(`${success('通过选择模板, 你可以快速的初始化一个项目')}`))
     .option('-f, --force', '是否强制初始化项目(会清空所有文件)', false)
     .option('-i, --install', '是否在创建完成后自动安装依赖', false)
     .option('-s, --serve', '是否在安装依赖后自动启动服务', false)
@@ -52,7 +53,7 @@ async function registerCommand(config) {
   program
     .command('config')
     .summary('脚手架配置')
-    .description(bold(`${success('对脚手架进行配置, 也可以查看您的配置文件')}`))
+    .description(bold(`${success('对脚手架进行配置, 也可以查看你的配置文件')}`))
     .option('-s, --show', '查看脚手架的配置')
     .option('-i, --info', '查看脚手架的信息')
     .option('-sr, --set-registry <registry>', '指定 npm 源地址')
@@ -61,6 +62,15 @@ async function registerCommand(config) {
     .option('-ssu, --set-show-update <isShowUpdate>', '是否提示版本更新（boolean，默认true）')
     .action(async (...argv) => {
       await catchHandler(configCommand.bind(null, [...argv, config]));
+    });
+
+  // 注册 deploy 命令
+  program
+    .command('deploy')
+    .summary('项目部署')
+    .description(bold(`${success('构建并部署你的项目')}`))
+    .action(async (...argv) => {
+      await catchHandler(deployCommand.bind(null, [...argv, config]));
     });
 
   // 监听未注册的所有命令
@@ -85,7 +95,7 @@ async function registerCommand(config) {
   });
 
   // 出错的时候添加提示
-  program.showHelpAfterError(warn('通过添加 --help 来查看帮助文档, 以帮助您避免错误 \n'));
+  program.showHelpAfterError(warn('通过添加 --help 来查看帮助文档, 以帮助你避免错误 \n'));
 
   // 解析参数
   await program.parseAsync(process.argv);

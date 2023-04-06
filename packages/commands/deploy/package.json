@@ -1,0 +1,42 @@
+{
+  "name": "@warbler-fe/cli-command-deploy",
+  "version": "0.0.0",
+  "description": "流莺前端 -> 脚手架 -> deploy 命令",
+  "keywords": [
+    "cli",
+    "warbler",
+    "warbler-cli",
+    "warbler-fe",
+    "warbler-fe-cli",
+    "cli-command-deploy"
+  ],
+  "author": "warbler <1741847465@qq.com>",
+  "homepage": "https://github.com/alanhzw/warbler-cli/tree/main/packages/commands/init#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanhzw/warbler-cli.git",
+    "directory": "packages/utils"
+  },
+  "scripts": {
+    "test": "node ./__tests__/utils.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/alanhzw/warbler-cli/issues"
+  },
+  "dependencies": {
+    "@warbler-fe/cli-utils": "^0.0.0",
+    "@warbler-fe/cli-command": "^0.0.0"
+  }
+}

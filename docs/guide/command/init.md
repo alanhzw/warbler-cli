@@ -39,7 +39,7 @@ warbler init -h
 ```shell
 Usage: warbler init [options]
 
-通过选择模板, 您可以快速的初始化一个项目
+通过选择模板, 你可以快速的初始化一个项目
 
 Options:
   -f, --force    是否强制初始化项目(会清空所有文件) (default: false)

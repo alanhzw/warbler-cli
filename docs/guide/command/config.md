@@ -13,7 +13,7 @@ warbler config -h
 ```shell
 Usage: warbler config [options]
 
-对脚手架进行配置, 也可以查看您的配置文件
+对脚手架进行配置, 也可以查看你的配置文件
 
 Options:
   -s, --show                                    查看脚手架的配置

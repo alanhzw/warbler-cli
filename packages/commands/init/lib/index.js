@@ -106,6 +106,7 @@ class InitCommand extends Command {
       spinner.stop(true);
       warnLog('模板安装失败');
       errorLog(error.message);
+      debugLog(error);
     }
   }
 

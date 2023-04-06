@@ -2,7 +2,7 @@
 
 const path = require('path');
 const commander = require('commander');
-const { resolvePkg, errorLog } = require('@warbler-fe/cli-utils');
+const { resolvePkg, errorLog, debugLog } = require('@warbler-fe/cli-utils');
 const { warn, error, bold, chalk, success } = require('@warbler-fe/cli-utils');
 const initCommand = require('@warbler-fe/cli-command-init');
 const configCommand = require('@warbler-fe/cli-command-config');
@@ -112,6 +112,7 @@ async function catchHandler(fn) {
     await fn();
   } catch (e) {
     errorLog(e.message);
+    debugLog(e);
   }
 }
 

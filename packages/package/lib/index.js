@@ -97,6 +97,7 @@ class Package {
     } catch (error) {
       spinner.stop(true);
       errorLog(error.message);
+      debugLog(error);
     }
   }
 
@@ -133,6 +134,7 @@ class Package {
       } catch (error) {
         spinner.stop(true);
         errorLog(error.message);
+        debugLog(error);
       }
     }
   }

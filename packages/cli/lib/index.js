@@ -2,13 +2,13 @@
  * @Author: 一尾流莺
  * @Description: 脚手架主执行程序
  * @Date: 2022-03-04 11:10:26
- * @LastEditTime: 2023-01-30 16:01:49
+ * @LastEditTime: 2023-04-06 10:41:50
  * @FilePath: \warbler-cli\packages\cli\lib\index.js
  */
 
 'use strict';
 
-const { errorLog } = require('@warbler-fe/cli-utils');
+const { errorLog, debugLog } = require('@warbler-fe/cli-utils');
 const { checkNodeVersion, checkRoot, checkUserHome } = require('./check');
 const { checkCacheDir, checkCliVersion, checkConfig, checkDebug } = require('./check');
 const registerCommand = require('./registerCommand');
@@ -34,6 +34,7 @@ async function main() {
     await registerCommand(config);
   } catch (error) {
     errorLog(error.message);
+    debugLog(error);
   }
 }
 

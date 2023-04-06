@@ -7,9 +7,9 @@
     "prepare": "husky install",
     "commit": "git-cz",
     "commit:all": "git add . && git-cz",
-    "docs:dev": "vitepress dev docs --port 5373",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "dev": "vitepress dev docs --port 5373",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

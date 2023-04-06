@@ -1,6 +1,6 @@
 'use strict';
 
-const { errorLog, isArray } = require('@warbler-fe/cli-utils');
+const { errorLog, isArray, debugLog } = require('@warbler-fe/cli-utils');
 // Command 类, 命令的基类
 class Command {
   constructor(argv) {
@@ -25,7 +25,10 @@ class Command {
       chain = chain.then(() => this.init());
       chain = chain.then(() => this.exec());
       chain = chain.then(() => this.final());
-      chain.catch((error) => errorLog(error.message));
+      chain.catch((error) => {
+        errorLog(error.message);
+        debugLog(error);
+      });
     });
   }
 

@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:获取项目里的 package.json 文件的内容
  * @Date: 2022-12-12 10:41:18
- * @LastEditTime: 2022-12-14 16:10:41
+ * @LastEditTime: 2023-04-08 16:28:28
  * @FilePath: \warbler-cli\packages\utils\lib\pkg.js
  */
 
@@ -20,10 +20,14 @@ const resolvePkg = (context = process.cwd()) => {
   return {};
 };
 
+// 判断是否存在 package.json 文件
+const existsPkg = (context = process.cwd()) => fs.existsSync(path.join(context, 'package.json'));
+
 // 执行目录下的 package.json 文件
 const pkg = resolvePkg();
 
 module.exports = {
   resolvePkg,
+  existsPkg,
   pkg,
 };

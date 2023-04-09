@@ -22,5 +22,7 @@ exports.minimist = require('minimist');
 exports.npminstall = require('npminstall');
 exports.emptyDir = require('empty-dir');
 exports.inquirer = require('inquirer');
+exports.simpleGit = require('simple-git');
+exports.terminalLink = require('terminal-link');
 
 exports.fse = fse;

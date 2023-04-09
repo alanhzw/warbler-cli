@@ -1,3 +1,8 @@
 {
-  "register3": "https://registry.npmmirror.com/"
+  "register": "https://registry.npmmirror.com/",
+  "buildCommand": "build",
+  "gitOptions": {
+    "gitServer": "github",
+    "token": "mytoken"
+  }
 }

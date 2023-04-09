@@ -101,7 +101,7 @@ async function registerCommand(config) {
   await program.parseAsync(process.argv);
 
   // 判断是否输入命令 显示帮助文档
-  if (program.args && program.args.length < 1) {
+  if (program.args?.length < 1) {
     program.outputHelp();
   }
 }

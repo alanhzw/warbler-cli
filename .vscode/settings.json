@@ -17,5 +17,5 @@
   },
   //在一定数量的字符后显示标尺
   "editor.rulers": [120],
-  "cSpell.words": ["cnpm", "linebreak", "taobao", "tencent", "vitepress", "ysgroup"]
+  "cSpell.words": ["cnpm", "Gitee", "linebreak", "taobao", "tencent", "vitepress", "ysgroup"]
 }

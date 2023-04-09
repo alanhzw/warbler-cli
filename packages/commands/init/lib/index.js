@@ -119,7 +119,7 @@ class InitCommand extends Command {
       debugLog('已初始化模板列表');
     }
     // 如果有 templateList 属性, 但是没有元素, 说明用户把所有的模板都删除了, 此时抛出错误
-    if (this.config.templateList && this.config.templateList.length === 0) {
+    if (this.config.templateList?.length === 0) {
       debugLog('模板列表中不存在任何模板信息');
       throw new Error('请至少添加一个模板后再进行项目创建');
     }

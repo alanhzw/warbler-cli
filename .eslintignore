@@ -12,3 +12,4 @@ yarn.lock
 lerna.json
 warbler.json
 lerna-debug.log
+/dist

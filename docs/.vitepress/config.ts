@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress';
 // import sidebar from './sidebar/index';
 
 export default defineConfig({
+  outDir: '../dist',
   lang: 'en-US',
   title: 'warbler-cli',
   description: 'Command line interface for rapid JavaScript development',

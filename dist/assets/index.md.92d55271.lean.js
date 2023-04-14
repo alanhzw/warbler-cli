@@ -1,0 +1,1 @@
+import{_ as a,c as s,o as e,N as l}from"./chunks/framework.0799945b.js";const m=JSON.parse('{"title":"warbler-cli","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","lastUpdated":1681441463000}'),n={name:"index.md"},o=l("",17),p=[o];function t(r,c,i,d,h,C){return e(),s("div",null,p)}const y=a(n,[["render",t]]);export{m as __pageData,y as default};

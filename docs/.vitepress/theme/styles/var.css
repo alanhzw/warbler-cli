@@ -54,15 +54,9 @@
   :root {
     --vp-home-hero-image-filter: blur(72px) !important;
   }
-  .VPDoc {
-    padding: 64px 24px 96px;
-  }
 }
 
 @media (max-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(72px) !important;
-  }
   .VPDoc {
     padding-top: 64px !important;
   }

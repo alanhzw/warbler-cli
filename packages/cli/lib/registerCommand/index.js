@@ -6,7 +6,7 @@ const { resolvePkg, errorLog, debugLog } = require('@warbler-fe/cli-utils');
 const { warn, error, bold, chalk, success } = require('@warbler-fe/cli-utils');
 const initCommand = require('@warbler-fe/cli-command-init');
 const configCommand = require('@warbler-fe/cli-command-config');
-const deployCommand = require('@warbler-fe/cli-command-deploy');
+// const deployCommand = require('@warbler-fe/cli-command-deploy');
 
 // 命令注册
 async function registerCommand(config) {
@@ -24,7 +24,7 @@ async function registerCommand(config) {
     .description(
       bold(
         `CLI of WarblerFE, Welcome to the homepage of warbler! 👉${success(
-          'http://warbler.duwanyu.com',
+          'http://www.warblerfe.top',
         )}`,
       ),
     )
@@ -42,7 +42,7 @@ async function registerCommand(config) {
     .command('init')
     .summary('初始化项目')
     .description(bold(`${success('通过选择模板, 你可以快速的初始化一个项目')}`))
-    .option('-f, --force', '是否强制初始化项目(会清空所有文件)', false)
+    .option('-pn, --project-name <projectName>', '指定项目名称')
     .option('-i, --install', '是否在创建完成后自动安装依赖', false)
     .option('-s, --serve', '是否在安装依赖后自动启动服务', false)
     .action(async (...argv) => {
@@ -65,13 +65,13 @@ async function registerCommand(config) {
     });
 
   // 注册 deploy 命令
-  program
-    .command('deploy')
-    .summary('项目部署')
-    .description(bold(`${success('构建并部署你的项目')}`))
-    .action(async (...argv) => {
-      await catchHandler(deployCommand.bind(null, [...argv, config]));
-    });
+  // program
+  //   .command('deploy')
+  //   .summary('项目部署')
+  //   .description(bold(`${success('构建并部署你的项目')}`))
+  //   .action(async (...argv) => {
+  //     await catchHandler(deployCommand.bind(null, [...argv, config]));
+  //   });
 
   // 监听未注册的所有命令
   program.on('command:*', ([cmd]) => {

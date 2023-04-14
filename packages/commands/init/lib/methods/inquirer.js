@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description:命令行交互
  * @Date: 2022-12-09 15:32:59
- * @LastEditTime: 2023-01-05 16:36:19
+ * @LastEditTime: 2023-04-14 10:24:59
  * @FilePath: \warbler-cli\packages\commands\init\lib\methods\inquirer.js
  */
 
@@ -23,7 +23,7 @@ async function isForceInit() {
 }
 
 // 询问项目名称和项目模板
-async function getProjectInfo(config) {
+async function getProjectInfo(config, name) {
   const namePrompt = {
     type: 'input',
     message: '请输入项目名称',
@@ -42,8 +42,16 @@ async function getProjectInfo(config) {
     default: 0,
     choices: config.templateList || [],
   };
-  const { projectName, templateName } = await inquirer.prompt([namePrompt, templateNamePrompt]);
-  return { projectName, templateName };
+  const questions = [];
+  if (!name) {
+    questions.push(namePrompt);
+  }
+  questions.push(templateNamePrompt);
+  const { projectName, templateName } = await inquirer.prompt(questions);
+  return {
+    projectName: name || projectName,
+    templateName,
+  };
 }
 
 // 验证项目名称是否符合规范
@@ -55,4 +63,5 @@ function isValidateName(a) {
 module.exports = {
   isForceInit,
   getProjectInfo,
+  isValidateName,
 };

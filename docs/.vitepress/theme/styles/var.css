@@ -146,3 +146,7 @@ html,
 body {
   background: var(--warbler-bg) !important;
 }
+
+.VPLocalNav {
+  top: 64px !important;
+}

@@ -8,21 +8,24 @@
 warbler init [options]
 ```
 
-如果你执行命令所在的目录不为空的话，你会收到这样的提示：
+首先你会被提示输入项目名称
 
-![init-01](../../assets/init-01.png)
+```shell
+❯ warbler init
+? 请输入项目名称
+```
 
-输入 `y`，继续创建，输入 `N`，则退出程序，结束创建
+然后，你会被提示选取一个模板：
 
-::: warning
-输入 y 后，脚手架会清空执行目录下所有的文件，并且不可恢复，请确认目录中的内容是否必要。
-:::
+```shell
+❯ warbler init
+? 请输入项目名称 my-project
+? 请选择项目模板 (Use arrow keys)
+> vue3
+  vue2
+```
 
-如果你选择清空目录，或者目录本身为空，你会被提示选取一个模板：
-
-![init-02](../../assets/init-02.png)
-
-当然，模板可能不止图中的几个，你也可以选择 添加自定义模板
+当然，模板可能不止上述的几个，你也可以选择 添加自定义模板
 
 选择完模板以后等待安装完成即可，如果携带了 `--install`，`--serve` 参数，你还需要等待脚手架为你安装依赖，启动服务
 
@@ -42,25 +45,23 @@ Usage: warbler init [options]
 通过选择模板, 你可以快速的初始化一个项目
 
 Options:
-  -f, --force    是否强制初始化项目(会清空所有文件) (default: false)
+  -pn, --project-name <projectName>  指定项目名称
   -i, --install  是否在创建完成后自动安装依赖 (default: false)
   -s, --serve    是否在安装依赖后自动启动服务 (default: false)
   -h, --help     查看帮助文档
 ```
 
-### --force
-
-是否强制初始化项目，使用该参数后，如果执行目录下有文件，则不进行询问，直接强制清空。
+### --project-name
 
 ::: warning
-使用该参数会清空执行目录下所有的文件，并且不可恢复，请确认目录中的内容是否必要，再使用该参数。
+该参数要求以英文字母开头,数字或字母结尾,字符只允许使用 - 以及 \_，不符合规范将终止程序的运行
 :::
 
 ```shell
 # 你可以这样使用该参数
-warbler init --force
+warbler init  --project-name <projectName>
 # 也可以使用它的简写模式
-warbler init -f
+warbler init -pn <projectName>
 ```
 
 ### --install

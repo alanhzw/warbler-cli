@@ -17,7 +17,7 @@ warbler --help
 ```shell
 Usage: warbler <command> [options]
 
-CLI of WarblerFE, Welcome to the homepage of warbler! 👉http://warbler.duwanyu.com
+CLI of WarblerFE, Welcome to the homepage of warbler! 👉http://www.warblerfe.top
 
 Options:
   -V, --version     查看脚手架版本

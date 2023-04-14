@@ -2,7 +2,7 @@
  * @Author: 一尾流莺
  * @Description: 一些常量
  * @Date: 2022-03-04 11:10:26
- * @LastEditTime: 2023-02-08 16:00:51
+ * @LastEditTime: 2023-04-14 11:13:27
  * @FilePath: \warbler-cli\packages\utils\lib\const.js
  */
 
@@ -13,8 +13,8 @@ const CLI_AUTHOR = '一尾流莺';
 // 脚手架名称
 const CLI_NAME = 'warbler-cli';
 // 脚手架 npm 模块名称
-// const CLI_PACKAGE_NAME = '@warbler-fe/cli';
-const CLI_PACKAGE_NAME = 'vue';
+const CLI_PACKAGE_NAME = '@warbler-fe/cli';
+// const CLI_PACKAGE_NAME = 'vue';
 // 脚手架最低 node 版本
 const LOWEST_NODE_VERSION = '14.18.0';
 // 默认缓存目录

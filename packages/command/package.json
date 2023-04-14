@@ -21,7 +21,8 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "http://62.234.217.203:52528/repository/sept/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "repository": {
     "type": "git",

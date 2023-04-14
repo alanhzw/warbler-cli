@@ -1,6 +1,6 @@
 {
   "name": "@warbler-fe/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "流莺前端 -> 脚手架 -> 核心",
   "keywords": [
     "cli",
@@ -39,10 +39,10 @@
     "url": "https://github.com/alanhzw/warbler-cli/issues"
   },
   "dependencies": {
-    "@warbler-fe/cli-command-config": "^1.0.0",
-    "@warbler-fe/cli-command-deploy": "^1.0.0",
-    "@warbler-fe/cli-command-init": "^1.0.0",
-    "@warbler-fe/cli-utils": "^1.0.0",
+    "@warbler-fe/cli-command-config": "^1.0.1",
+    "@warbler-fe/cli-command-deploy": "^1.0.1",
+    "@warbler-fe/cli-command-init": "^1.0.1",
+    "@warbler-fe/cli-utils": "^1.0.1",
     "commander": "^10.0.0"
   }
 }
